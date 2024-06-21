@@ -1,0 +1,46 @@
+/* Container styling */
+.game-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Table styling */
+.game-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.game-table th, .game-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.game-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.game-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.game-table tbody tr:hover {
+  background-color: #ddd;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .game-container {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .game-table th, .game-table td {
+    padding: 6px;
+  }
+}

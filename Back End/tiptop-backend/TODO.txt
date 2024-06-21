@@ -1,0 +1,22 @@
+//TODO: 
+        1- fix the bug where the members api call only returns 25 entries (frontend/backend) / make tables scrollable (done)
+        2- Login page (done)
+        3- profile page to change password (done)
+        4- compatibilty with mobile (ctrl + shift +i) + (ctrl + shift + m)(done for ipads) 
+
+        5- fix a bug in memberInfo where if u redeem the points and u search for another member without closing the membersinfo form the points show as zero
+	6- deploy
+        7- when all members leave the session should end automatically (azon)
+
+        for (let i = 300123;i<=301121;i++){
+      await axios.post('http://localhost:1337/api/members', {
+        data: {
+         membership_id:i,
+         level: 2
+        }
+      }, {
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        }
+      });
+    }

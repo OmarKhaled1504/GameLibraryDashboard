@@ -1,0 +1,74 @@
+.sessions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.session-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.session-table th,
+.session-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.session-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.session-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.session-table tbody tr:hover {
+  background-color: #ddd;
+}
+
+.receipt {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  width: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.receipt h2 {
+  margin-top: 0;
+}
+
+.receipt p {
+  margin: 5px 0;
+}
+
+.receipt-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.receipt-table th,
+.receipt-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.receipt-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}

@@ -1,0 +1,40 @@
+/* Navbar.css */
+.navbar {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Use flexbox to display items horizontally */
+  flex-wrap: wrap; /* Wrap items on small screens */
+}
+
+.navbar li {
+  margin-right: 20px; /* Add space between navbar items */
+}
+
+.navbar li:last-child {
+  margin-right: 0; /* Remove margin from last navbar item */
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: #773a3a; /* Set navbar item color */
+}
+
+.navbar li a:hover {
+  color: #000; /* Change color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .navbar li {
+    margin-bottom: 10px; /* Add space between items vertically on small screens */
+  }
+
+  .navbar li:last-child {
+    margin-bottom: 0; /* Remove margin from last navbar item */
+  }
+}
