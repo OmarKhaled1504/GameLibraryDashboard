@@ -22,7 +22,7 @@ const Profile = () => {
       return;
     }
     try {
-      const response = await axios.post('https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/auth/change-password', {
+      const response = await axios.post('REDACTED/api/auth/change-password', {
         currentPassword,
         password: newPassword,
         passwordConfirmation,

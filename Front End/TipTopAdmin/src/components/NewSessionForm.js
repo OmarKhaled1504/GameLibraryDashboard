@@ -22,7 +22,7 @@ const NewSessionForm = ({ activeSessions, authToken, onSubmit }) => {
   // });
   const validMember = async (memberId) => {
     
-    const memberResponse = await axios.get(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/members?filters[membership_id][$eq]=${memberId}`, {
+    const memberResponse = await axios.get(`REDACTED/api/members?filters[membership_id][$eq]=${memberId}`, {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },
@@ -56,7 +56,7 @@ const NewSessionForm = ({ activeSessions, authToken, onSubmit }) => {
   // };
 
   const findIdByMembershipId =  async (membershipId) => {
-    let member = await axios.get(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/members?filters[membership_id][$eq]=${membershipId}`, {
+    let member = await axios.get(`REDACTED/api/members?filters[membership_id][$eq]=${membershipId}`, {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },
@@ -87,7 +87,7 @@ const NewSessionForm = ({ activeSessions, authToken, onSubmit }) => {
     }
     try {
       for (let i = 0; i < parseInt(formData.guests); i++) {
-        const newGuest = await axios.post('https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/guests', {
+        const newGuest = await axios.post('REDACTED/api/guests', {
           data: {
             start_time: start_time,
             active: true,
@@ -104,7 +104,7 @@ const NewSessionForm = ({ activeSessions, authToken, onSubmit }) => {
       console.error('Error adding guest:', error);
     }
     try {
-      const response = await axios.post('https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/sessions', {
+      const response = await axios.post('REDACTED/api/sessions', {
         data: {
           members: await findIdByMembershipId(memberIds[0]),
           branch: parseInt(formData.branchId),

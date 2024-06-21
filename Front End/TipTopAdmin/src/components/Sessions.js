@@ -10,7 +10,7 @@ import Spinner from './Spinner.js';
 import moment from 'moment';
 import './Sessions.css';
 
-const authToken = '6bd61b66c9ef1c6358b40c1d23978a5b6a66012680330896e281648cf030bc341fce3ff77c1b49f668d6d6427eb8993391d4d52f3e9b0421589fec5f9d11049852968b12fb9f7ca9a50efb6f4a386a6d1b3bd558df2cfeb16f4020da5cfcefdbb8f6f23b8ab326cbaafb587adef3f2de05434ce908556e604f3039acbfa1cbe4';
+const authToken = 'REDACTED';
 
 const Sessions = () => {
   const [showForm, setShowForm] = useState(null);
@@ -30,7 +30,7 @@ const Sessions = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const getMember = async (memberId) => {
-    const memberResponse = await axios.get(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/members?filters[membership_id][$eq]=${memberId}`, {
+    const memberResponse = await axios.get(`REDACTED/api/members?filters[membership_id][$eq]=${memberId}`, {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },
@@ -57,7 +57,7 @@ const Sessions = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.get('https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/sessions', {
+      const response = await axios.get('REDACTED/api/sessions', {
         headers: {
           Authorization: `bearer ${authToken}`,
         },
@@ -65,7 +65,7 @@ const Sessions = () => {
           populate: 'members,level,guests,branch',
         },
       });
-      // const branchesResponse = await axios.get('https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/branches', {
+      // const branchesResponse = await axios.get('REDACTED/api/branches', {
       //   headers: {
       //     Authorization: `bearer ${authToken}`,
       //   },
@@ -73,7 +73,7 @@ const Sessions = () => {
       //     populate: 'games',
       //   },
       // });
-      // const gamesResponse = await axios.get('https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/games', {
+      // const gamesResponse = await axios.get('REDACTED/api/games', {
       //   headers: {
       //     Authorization: `bearer ${authToken}`,
       //   },
@@ -81,7 +81,7 @@ const Sessions = () => {
       //     populate: 'branches',
       //   },
       // });
-      // const membersResponse = await axios.get('https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/members', {
+      // const membersResponse = await axios.get('REDACTED/api/members', {
       //   headers: {
       //     Authorization: `bearer ${authToken}`,
       //   },
@@ -89,7 +89,7 @@ const Sessions = () => {
       //     populate: 'level',
       //   },
       // });
-      const levelsResponse = await axios.get('https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/levels', {
+      const levelsResponse = await axios.get('REDACTED/api/levels', {
         headers: {
           Authorization: `bearer ${authToken}`,
         },
@@ -136,7 +136,7 @@ const Sessions = () => {
   const handleAddGuest = async (session) => {
     try {
       const sessionGuests = session.attributes.guests.data.map((guest) => guest.id);
-      const newGuest = await axios.post('https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/guests', {
+      const newGuest = await axios.post('REDACTED/api/guests', {
         data: {
           start_time: moment(),
           active: true,
@@ -147,7 +147,7 @@ const Sessions = () => {
         }
       });
       sessionGuests.push(newGuest.data.data.id);
-      await axios.put(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/sessions/${session.id}`, {
+      await axios.put(`REDACTED/api/sessions/${session.id}`, {
         data: {
           guests: sessionGuests
         }
@@ -205,7 +205,7 @@ const Sessions = () => {
       }
 
       const totalDue = pphGuest;
-      await axios.put(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/guests/${parseInt(guest.id)}`, {
+      await axios.put(`REDACTED/api/guests/${parseInt(guest.id)}`, {
         data: {
           active: false,
           end_time: endTime,
@@ -261,7 +261,7 @@ const Sessions = () => {
     const roundedDuration = customRound(durationInHours);
     const pph = getMemberLevelAndPPH(await getMember(session.attributes.members.data[0].attributes.membership_id));
     const member_due = pph;
-    await axios.put(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/sessions/${session.id}`, {
+    await axios.put(`REDACTED/api/sessions/${session.id}`, {
       data: {
         member_active: false,
         member_et: endTime,

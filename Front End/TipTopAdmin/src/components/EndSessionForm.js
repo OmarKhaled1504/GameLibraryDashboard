@@ -18,7 +18,7 @@ const EndSessionForm = ({ activeSessions, authToken, onSubmit, levels }) => {
   };
 
   const findIdByMembershipId = async (membershipId) => {
-    let member = await axios.get(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/members?filters[membership_id][$eq]=${membershipId}`, {
+    let member = await axios.get(`REDACTED/api/members?filters[membership_id][$eq]=${membershipId}`, {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },
@@ -30,7 +30,7 @@ const EndSessionForm = ({ activeSessions, authToken, onSubmit, levels }) => {
   };
   const validMember = async (memberId) => {
 
-    const memberResponse = await axios.get(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/members?filters[membership_id][$eq]=${memberId}`, {
+    const memberResponse = await axios.get(`REDACTED/api/members?filters[membership_id][$eq]=${memberId}`, {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },
@@ -43,7 +43,7 @@ const EndSessionForm = ({ activeSessions, authToken, onSubmit, levels }) => {
     }
   }
   const getMember = async (memberId) => {
-    const memberResponse = await axios.get(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/members?filters[membership_id][$eq]=${memberId}`, {
+    const memberResponse = await axios.get(`REDACTED/api/members?filters[membership_id][$eq]=${memberId}`, {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },
@@ -107,7 +107,7 @@ const EndSessionForm = ({ activeSessions, authToken, onSubmit, levels }) => {
       }
 
       const totalDue = pphGuest;
-      await axios.put(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/guests/${parseInt(guest.id)}`, {
+      await axios.put(`REDACTED/api/guests/${parseInt(guest.id)}`, {
         data: {
           active: false,
           end_time: endTime,
@@ -185,7 +185,7 @@ const EndSessionForm = ({ activeSessions, authToken, onSubmit, levels }) => {
        await handleRemoveGuest(sessionToUpdate, activeGuest)
       };
       
-      const sessionMidUpdating = await axios.get(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/sessions/${sessionToUpdate.id}`, {
+      const sessionMidUpdating = await axios.get(`REDACTED/api/sessions/${sessionToUpdate.id}`, {
         headers: {
           Authorization: `bearer ${authToken}`,
         },
@@ -211,7 +211,7 @@ const EndSessionForm = ({ activeSessions, authToken, onSubmit, levels }) => {
       const totalPointsEarned = pointsCoefficient * totalDue;
 
 
-      const updatedSession = await axios.put(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/sessions/${sessionToUpdate.id}`, {
+      const updatedSession = await axios.put(`REDACTED/api/sessions/${sessionToUpdate.id}`, {
         data: {
           active: false,
           end_time: endTime,
@@ -232,7 +232,7 @@ const EndSessionForm = ({ activeSessions, authToken, onSubmit, levels }) => {
 
       });
 
-      const updatedMember = await axios.put(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/members/${memberId}`, {
+      const updatedMember = await axios.put(`REDACTED/api/members/${memberId}`, {
         data: {
           points: updateMemberPoints(await getMember(formData.memberId), totalPointsEarned).toFixed(2)
         }

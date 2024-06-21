@@ -4,7 +4,7 @@ import MemberInfo from './MemberInfo';
 import './Members.css';
 import Spinner from './Spinner.js';
 
-const authToken = '6bd61b66c9ef1c6358b40c1d23978a5b6a66012680330896e281648cf030bc341fce3ff77c1b49f668d6d6427eb8993391d4d52f3e9b0421589fec5f9d11049852968b12fb9f7ca9a50efb6f4a386a6d1b3bd558df2cfeb16f4020da5cfcefdbb8f6f23b8ab326cbaafb587adef3f2de05434ce908556e604f3039acbfa1cbe4';
+const authToken = 'REDACTED';
 
 const Members = () => {
   const [sessions, setSessions] = useState([]);
@@ -17,7 +17,7 @@ const Members = () => {
     setIsLoading(true)
 
     try {
-      const memberResponse = await axios.get(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/members?filters[membership_id][$eq]=${memberId}`, {
+      const memberResponse = await axios.get(`REDACTED/api/members?filters[membership_id][$eq]=${memberId}`, {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },
@@ -25,12 +25,12 @@ const Members = () => {
           populate: 'sessions,level',
         },
       });
-      const levelsResponse = await axios.get('https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/levels', {
+      const levelsResponse = await axios.get('REDACTED/api/levels', {
         headers: {
           Authorization: `bearer ${authToken}`,
         },
       });
-      const sessionsResponse = await axios.get('https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/sessions', {
+      const sessionsResponse = await axios.get('REDACTED/api/sessions', {
         headers: {
           Authorization: `bearer ${authToken}`,
         }

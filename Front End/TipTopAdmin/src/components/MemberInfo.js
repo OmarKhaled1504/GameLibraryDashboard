@@ -8,7 +8,7 @@ const MemberInfo = ({ member, onRemove, authToken, fetchData }) => {
   
   const resetPoints = async () => {
     try {
-      const pointsResponse = await axios.put(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/members/${member.id}`, {
+      const pointsResponse = await axios.put(`REDACTED/api/members/${member.id}`, {
         data: { points: 0 }
       }, {
         headers: {
@@ -16,7 +16,7 @@ const MemberInfo = ({ member, onRemove, authToken, fetchData }) => {
         },
       });
       // Fetch the updated member data
-      await axios.get(`https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/members/${member.id}`, {
+      await axios.get(`REDACTED/api/members/${member.id}`, {
         headers: {
           Authorization: `bearer ${authToken}`,
         },

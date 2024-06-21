@@ -25,7 +25,7 @@ const NewMemberForm = ({ members, authToken, onSubmit }) => {
     }
 
     try {
-      await axios.post('https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/members', {
+      await axios.post('REDACTED/api/members', {
         data: {
           membership_id: parseInt(formData.membership_id),
           name: formData.name,

@@ -17,7 +17,7 @@ const Login = () => {
     e.preventDefault();
     setError('');
     try {
-      const response = await axios.post('https://tiptop-backend-b8ae4724f5a4.herokuapp.com/api/auth/local', {
+      const response = await axios.post('REDACTED/api/auth/local', {
         identifier: username, // Strapi uses "identifier" for username or email
         password: password,
       }, {
